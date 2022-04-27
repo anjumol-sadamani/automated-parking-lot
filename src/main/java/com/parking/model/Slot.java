@@ -22,4 +22,5 @@ public class Slot {
     @ManyToOne
     @JoinColumn(name = "floor_id")
     private Floor floor;
+
 }

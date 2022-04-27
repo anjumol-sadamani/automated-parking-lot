@@ -16,6 +16,7 @@ public class VehicleFactory {
 
     @Value("${free.car-wash}")
     private boolean carFreeWash;
+
     public Vehicle getVehicle(Long vinNumber, Float height, Float weight, String type){
         Constant.VehicleType vType = Constant.VehicleType.getVehicleType(type);
         switch (Objects.requireNonNull(vType)){
