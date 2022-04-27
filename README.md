@@ -46,7 +46,7 @@ java -jar target/parking-automater-0.0.1-SNAPSHOT.jar
 
 Request
 
-    API - v1/automatic/parking/allocate/{entrance}
+    API - v1/automatic-parking/allocate/{entrance}
 
 
 Request Body 
