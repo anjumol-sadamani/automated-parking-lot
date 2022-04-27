@@ -5,6 +5,6 @@ import com.parking.dto.VehicleDto;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface SlotAllocationService {
-    TicketDto allocateSlot(String entrance, VehicleDto vehicle);
+public interface ParkingService {
+    TicketDto allocateSlot(String entrance, VehicleDto vehicleDto);
 }

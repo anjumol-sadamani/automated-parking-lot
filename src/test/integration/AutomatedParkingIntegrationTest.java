@@ -16,15 +16,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(classes = AutomatedParkingApp.class,
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class AutomatedParkingIntegrationTest {
+class AutomatedParkingIntegrationTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
 
-    private String URL = "/v1/automatic/parking/allocate/E1";
+    private String URL = "/v1/automatic-parking/allocate/E1";
 
     @Test
-    public void testSlotAllocation() throws Exception {
+    void testSlotAllocation() throws Exception {
         VehicleDto vehicleDto = new VehicleDto(1234l, 1.2f, 1000f, "car");
         ResponseEntity<TicketDto> responseEntity = restTemplate.postForEntity(URL, vehicleDto, TicketDto.class);
 

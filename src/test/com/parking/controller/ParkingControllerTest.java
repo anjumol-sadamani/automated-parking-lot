@@ -3,7 +3,7 @@ package com.parking.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.parking.dto.TicketDto;
 import com.parking.dto.VehicleDto;
-import com.parking.service.SlotAllocationService;
+import com.parking.service.ParkingService;
 import com.parking.validation.InputValidation;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,19 +22,19 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(controllers = SlotAllocationController.class)
-class SlotAllocationControllerTest {
+@WebMvcTest(controllers = ParkingController.class)
+class ParkingControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockBean
-    private SlotAllocationService parkingService;
+    private ParkingService parkingService;
 
     @MockBean
     private InputValidation inputValidation;
 
-    private String URL = "/v1/automatic/parking/allocate/{entrance}";
+    private String URL = "/v1/automatic-parking/allocate/{entrance}";
 
     @Test
     void allocateSlot_invalid_entrance() throws Exception {
