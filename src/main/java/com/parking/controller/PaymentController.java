@@ -11,7 +11,7 @@ import javax.websocket.server.PathParam;
 
 @RestController
 @Slf4j
-@RequestMapping("v1/automatic/parking")
+@RequestMapping("v1/automatic-parking")
 public class PaymentController {
 
     private final PaymentService paymentService;
