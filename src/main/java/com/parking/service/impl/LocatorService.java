@@ -27,11 +27,11 @@ public class LocatorService {
 
 
     /**
-     * Method to find a suitable slot for parking the vehicle. The available free slots are
+     * Method to find a suitable slot for parking the vehicle. The available floors are
      * fetched from the database, then below logic is applied to find matching slot.
-     * 1 - filter the stream of floors for height > vehicle height and has remaining capacity
+     * 1 - filter the stream of floors for height > vehicle height and has remaining capacity >= vehicle weight
      * 2 - get available slots from filtered floors
-     * 3 - choose a floor of minimum height and capacity
+     * 3 - choose a slot of minimum height and capacity
      * @param height Height of the vehicle
      * @param weight Weight of the vehicle
      * @return Suitable slot to park the car

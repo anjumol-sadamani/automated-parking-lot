@@ -14,6 +14,7 @@ import java.util.List;
 public interface SlotRepository extends CrudRepository<Slot,Long> {
 
     /**
+     * FUTURE SCOPE
      * This method was added for future scope, when running a scaled system to lock
      * the slot selected for parking
      * @param h height of the vehicle
