@@ -16,37 +16,27 @@ public class VehicleSlotMapping {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "entrance_mapping_id",nullable = false)
-    private Long entranceExitMappingId;
     @ManyToOne
-    @JoinColumn(name = "entrance_mapping_id", insertable = false,updatable = false)
+    @JoinColumn(name = "entrance_mapping_id")
     private EntranceExitMapping entranceExitMapping;
-    @Column(name = "vehicle_id",nullable = false)
-    private Long vehicleId;
     @OneToOne
-    @JoinColumn(name = "vehicle_id",insertable = false,updatable = false)
+    @JoinColumn(name = "vehicle_id")
     Vehicle vehicle;
-    @Column(name = "floor_id", nullable = false)
-    private Long floorId;
     @ManyToOne
-    @JoinColumn(name = "floor_id", insertable = false, updatable = false)
+    @JoinColumn(name = "floor_id")
     private Floor floor;
-    @Column(name = "slot_id",nullable = false)
-    private Long slotId;
     @ManyToOne
-    @JoinColumn(name = "slot_id",insertable = false,updatable = false)
+    @JoinColumn(name = "slot_id")
     private Slot slot;
     private LocalDateTime entranceTime;
     private LocalDateTime exitTime;
     private Double rate;
 
-    public VehicleSlotMapping(Long entranceExitMappingId, Long vehicleId, Long floorId, Long slotId) {
-        this.entranceExitMappingId = entranceExitMappingId;
-        this.vehicleId = vehicleId;
-        this.floorId = floorId;
-        this.slotId = slotId;
+    public VehicleSlotMapping(EntranceExitMapping entranceExitMapping, Vehicle vehicle, Floor floor, Slot slot) {
+        this.entranceExitMapping = entranceExitMapping;
+        this.vehicle = vehicle;
+        this.floor = floor;
+        this.slot = slot;
         this.entranceTime = LocalDateTime.now();
     }
-
-
 }
